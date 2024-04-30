@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: dz.sofiane.apt_9.apt9.Apt9ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.837 s -- in dz.sofiane.apt_9.apt9.Apt9ApplicationTests

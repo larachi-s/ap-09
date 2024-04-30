@@ -1,0 +1,41 @@
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "C:\spring\mybatis-3-mapper.dtd">
+<!-- <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> -->
+
+<mapper namespace="dz.sofiane.apt_9.apt9.mappers.ConsultationMapper">
+
+
+
+    <resultMap id="consultationResultMap" type="dz.sofiane.apt_9.apt9.models.Consultation">
+        <result property="id" column="id" />
+        <result property="motif" column="motif" />
+        <result property="date_consultation" column="date_consultation" />
+        <result property="id_patient" column="id_patient" />
+    </resultMap>
+
+
+
+
+    <select id="getById" parameterType="int" resultMap="consultationResultMap">
+        SELECT * FROM cabinet.consultation WHERE id = #{id}
+    </select>
+
+
+
+<!--    <insert id="createPatient" parameterType="dz.sofiane.apt_9.apt9.models.Patient">-->
+<!--        INSERT INTO cabinet.patient(nom, prenom, sexe,date_naissance,numero_telephone,adresse)-->
+<!--        VALUES (#{nom}, #{prenom}, #{prenom},#{prenom},)-->
+<!--    </insert>-->
+
+    <!--    <update id="update" parameterType="com.parcauto.parcauto.models.AgentVo">-->
+    <!--        UPDATE agent-->
+    <!--        SET matricule=#{matricule}, nom_utilisateur=#{nom_utilisateur},-->
+    <!--        password=#{password}-->
+    <!--        WHERE matricule=#{matricule}-->
+    <!--    </update>-->
+
+    <!--    <delete id="delete" parameterType="int">-->
+    <!--        DELETE FROM agent WHERE matricule=#{matricule}-->
+    <!--    </delete>-->
+</mapper>
+

@@ -1,0 +1,34 @@
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "C:\spring\mybatis-3-mapper.dtd">
+<!-- <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> -->
+
+<mapper namespace="dz.sofiane.apt_9.apt9.mappers.PatientMapper">
+
+    <resultMap id="patientResultMap" type="dz.sofiane.apt_9.apt9.models.Patient">
+        <result property="id" column="id" />
+        <result property="nom" column="nom" />
+        <result property="prenom" column="prenom" />
+        <result property="sexe" column="sexe" />
+        <result property="dateNaissance" column="date_naissance" />
+        <result property="numeroTelephone" column="numero_telephone" />
+        <result property="adresse" column="adresse" />
+    </resultMap>
+
+    <select id="getAll" resultMap="patientResultMap">
+        SELECT * FROM cabinet.patient
+    </select>
+
+
+    <select id="getByName" parameterType="String" resultMap="patientResultMap">
+        SELECT * FROM cabinet.patient WHERE nom = #{nom}
+    </select>
+
+
+
+    <insert id="createPatient" parameterType="dz.sofiane.apt_9.apt9.models.Patient">
+        INSERT INTO cabinet.patient(id,nom, prenom, sexe,date_naissance,numero_telephone,adresse)
+        VALUES (#{id},#{nom}, #{prenom} ,#{sexe}, #{dateNaissance},#{numeroTelephone},#{adresse})
+    </insert>
+
+</mapper>
+
